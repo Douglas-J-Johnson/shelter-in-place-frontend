@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const BASE_PATH = "http://localhost:3000/activities"
+
+class App extends React.Component {
+  state = {
+    activities: [],
+    selectedActivity: 0
+  }
+
+  componentDidMount() {
+    fetch(BASE_PATH)
+    .then(response => response.json())
+    .then(activities => this.setState({activities}))
+  }
+
+  render() {
+    console.log(this.state)
+
+    return (
+      <div className="App">
+        <header className="App-header"></header>
+        <body>
+          <ActivityCard activity={this.state.activities[this.state.selectedActivity]} />
+        </body>
+      </div>
+    );
+  }
 }
 
 export default App;
