@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Card from './components/Card'
+import { act } from 'react-dom/test-utils';
 
 const BASE_PATH = "http://localhost:3000/activities"
 
@@ -31,8 +32,9 @@ class App extends React.Component {
   }
 
   render() {
-    const selectedActivity = this.state.selectedActivity
-    console.log(selectedActivity)
+    const selectedActivityId = this.state.selectedActivity
+    const activities = this.state.activities
+    const selectedActivity = activities[selectedActivityId]
 
     return (
       <div className="App">
@@ -41,7 +43,7 @@ class App extends React.Component {
           <div onClick={() => this.getRandomActivityByType("passive")}>Passive</div>
           <div onClick={() => this.getRandomActivityByType("skill")}>Skill</div>
         </header>
-        {selectedActivity >= 0 ? <Card activity={this.state.activities[this.state.selectedActivity]} /> : null}
+        {selectedActivityId >= 0 ? <Card activity={selectedActivity} /> : null}
       </div>
     );
   }
