@@ -22,7 +22,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header"></header>
         <body>
-          <ActivityCard activity={this.state.activities[this.state.selectedActivity]} />
+          <Card activity={this.state.activities[this.state.selectedActivity]} />
         </body>
       </div>
     );
