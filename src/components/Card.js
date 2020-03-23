@@ -6,7 +6,7 @@ export default ({activity}) => {
     return (
         <div className='card'>
             <img src={activity.image} alt={activity.image}></img>
-            <h1>{activity.name}</h1>
+            <h2>{activity.name}</h2>
             <p>{activity.description}</p>
             <a href={activity.resource}>{activity.resource}</a>
         </div>

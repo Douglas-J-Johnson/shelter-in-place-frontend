@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Card from './components/Card'
 import { act } from 'react-dom/test-utils';
 
@@ -38,9 +38,10 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <h1>The Shelter-In-Place App</h1>
         <header className="App-header">
           <div onClick={() => this.getRandomActivityByType("active")}>Active</div>
-          <div onClick={() => this.getRandomActivityByType("passive")}>Passive</div>
+          <div onClick={() => this.getRandomActivityByType("Watch a Movie")}>WATCH A MOVIE</div>
           <div onClick={() => this.getRandomActivityByType("skill")}>Skill</div>
         </header>
         {selectedActivityId >= 0 ? <Card activity={selectedActivity} /> : null}
