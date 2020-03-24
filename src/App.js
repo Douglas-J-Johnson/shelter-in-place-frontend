@@ -40,8 +40,8 @@ class App extends React.Component {
       <div className="App">
         <h1>The Shelter-In-Place App</h1>
         <header className="App-header">
-          <div onClick={() => this.getRandomActivityByType("active")}>Active</div>
-          <div onClick={() => this.getRandomActivityByType("Watch a Movie")}>WATCH A MOVIE</div>
+          <div onClick={() => this.getRandomActivityByType("Exercise")}>Active</div>
+          <div onClick={() => this.getRandomActivityByType("Watch a Movie")}>Watch a movie</div>
           <div onClick={() => this.getRandomActivityByType("skill")}>Skill</div>
         </header>
         {selectedActivityId >= 0 ? <Card activity={selectedActivity} /> : null}
