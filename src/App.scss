@@ -45,17 +45,13 @@ header {
 
 .card {
 
-  // background-image: url('./img/sars-cov-19.jpg');
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // border-style: solid;
-  // width: 50rem;
   border-radius: 20px;
   box-shadow: 5px 10px 50px #888888;
   color: white;
-
 
   & img {
     width: 20rem;
@@ -68,5 +64,4 @@ header {
     width: 30rem;
     padding: 1rem;
   }
-
 }
